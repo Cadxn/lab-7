@@ -12,7 +12,10 @@ llist createList() {
 return NULL;
 }
 void printList(llist l){
-
+    if(l == NULL) {
+        printf("List is empty");
+        return;
+    }
     while(l->next != NULL){
         printf("%d ", l->data);
         l = l->next;
@@ -68,7 +71,7 @@ int main() {
     
     llist t = createList();
 
-    printList(t); printf("\n");
+    //printList(t); printf("\n");
 
     t = addAtEnd(t,2);
     t = addAtEnd(t,4);
@@ -76,6 +79,14 @@ int main() {
 
     t = removeAtFront(t);
 
+
+    printList(t); printf("\n");
+
+    t = removeAtFront(t);
+
+    printList(t); printf("\n");
+
+    t = removeAtFront(t);
 
     printList(t); printf("\n");
 
